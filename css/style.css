@@ -300,6 +300,15 @@ p {
     margin-bottom: var(--space-lg);
 }
 
+.hero-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--space-lg);
+    border: 2px solid var(--border);
+}
+
 .hero-title {
     font-size: 3rem;
     font-weight: 700;
