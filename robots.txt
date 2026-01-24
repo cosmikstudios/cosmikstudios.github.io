@@ -1,0 +1,6 @@
+# Robots.txt for cosmikstudios.dev
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.cosmikstudios.dev/sitemap.xml
