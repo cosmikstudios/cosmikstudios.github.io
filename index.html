@@ -9,18 +9,80 @@
     
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cosmik Studios">
     <meta property="og:title" content="Darkest Exiles - Cosmik Studios">
     <meta property="og:description" content="A hardcore tactical RPG management simulation. You don't fight. You prepare them to.">
     <meta property="og:url" content="https://www.cosmikstudios.dev">
-    <meta property="og:image" content="https://www.cosmikstudios.dev/images/app-icon-large.png">
+    <meta property="og:image" content="https://www.cosmikstudios.dev/images/screenshots/screenshot-1.jpeg">
+    <meta property="og:image:width" content="1290">
+    <meta property="og:image:height" content="2796">
+    <meta property="og:image:alt" content="Darkest Exiles - Guild Master tactical RPG game screenshot">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Darkest Exiles - Cosmik Studios">
+    <meta name="twitter:description" content="A hardcore tactical RPG management simulation. You don't fight. You prepare them to.">
+    <meta name="twitter:image" content="https://www.cosmikstudios.dev/images/screenshots/screenshot-1.jpeg">
     
     <!-- SEO -->
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.cosmikstudios.dev/">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/app-icon.png">
-    <link rel="apple-touch-icon" href="images/app-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/app-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/app-icon-large.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/app-icon-large.png">
+    
+    <!-- Structured Data for Organization (helps Google show your logo) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Cosmik Studios",
+        "url": "https://www.cosmikstudios.dev",
+        "logo": "https://www.cosmikstudios.dev/images/app-icon-large.png",
+        "sameAs": [
+            "https://discord.gg/4AS2ZUM2hf"
+        ]
+    }
+    </script>
+    
+    <!-- Structured Data for Software Application (helps with rich results) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Darkest Exiles",
+        "operatingSystem": "iOS",
+        "applicationCategory": "GameApplication",
+        "description": "A hardcore tactical RPG management simulation where you take on the role of a Guild Master. Scout unproven youth, train legendary heroes, and guide them through a dark fantasy world where preparation determines victory.",
+        "image": [
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-1.jpeg",
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-2.jpeg",
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-3.jpeg",
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-4.jpeg",
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-5.jpeg"
+        ],
+        "screenshot": [
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-1.jpeg",
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-2.jpeg",
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-3.jpeg",
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-4.jpeg",
+            "https://www.cosmikstudios.dev/images/screenshots/screenshot-5.jpeg"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/PreOrder"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Cosmik Studios",
+            "url": "https://www.cosmikstudios.dev"
+        }
+    }
+    </script>
     
     <title>Darkest Exiles | Cosmik Studios</title>
     <link rel="stylesheet" href="css/style.css">
@@ -61,6 +123,33 @@
                 where preparation determines victory.
             </p>
             <a href="#features" class="btn btn-primary">Discover the Game</a>
+        </div>
+    </section>
+
+    <!-- Screenshots Gallery Section -->
+    <section class="screenshots" id="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Game Preview</h2>
+                <p class="section-subtitle">Experience the darkness through these glimpses of Darkest Exiles</p>
+            </div>
+            <div class="screenshots-gallery">
+                <div class="screenshot-item">
+                    <img src="images/screenshots/screenshot-1.jpeg" alt="Darkest Exiles - Guild management interface" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/screenshots/screenshot-2.jpeg" alt="Darkest Exiles - Hero training system" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/screenshots/screenshot-3.jpeg" alt="Darkest Exiles - Combat formations" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/screenshots/screenshot-4.jpeg" alt="Darkest Exiles - Character progression" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/screenshots/screenshot-5.jpeg" alt="Darkest Exiles - Strategic gameplay" loading="lazy">
+                </div>
+            </div>
         </div>
     </section>
 
