@@ -133,22 +133,30 @@
                 <h2 class="section-title">Game Preview</h2>
                 <p class="section-subtitle">Experience the darkness through these glimpses of Darkest Exiles</p>
             </div>
-            <div class="screenshots-gallery">
-                <div class="screenshot-item">
-                    <img src="images/screenshots/screenshot-1.jpeg" alt="Darkest Exiles - Guild management interface" loading="lazy">
+            <div class="screenshots-wrapper">
+                <div class="screenshots-gallery">
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/screenshot-1.jpeg" alt="Darkest Exiles - Guild management interface" loading="lazy">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/screenshot-2.jpeg" alt="Darkest Exiles - Hero training system" loading="lazy">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/screenshot-3.jpeg" alt="Darkest Exiles - Combat formations" loading="lazy">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/screenshot-4.jpeg" alt="Darkest Exiles - Character progression" loading="lazy">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/screenshot-5.jpeg" alt="Darkest Exiles - Strategic gameplay" loading="lazy">
+                    </div>
                 </div>
-                <div class="screenshot-item">
-                    <img src="images/screenshots/screenshot-2.jpeg" alt="Darkest Exiles - Hero training system" loading="lazy">
-                </div>
-                <div class="screenshot-item">
-                    <img src="images/screenshots/screenshot-3.jpeg" alt="Darkest Exiles - Combat formations" loading="lazy">
-                </div>
-                <div class="screenshot-item">
-                    <img src="images/screenshots/screenshot-4.jpeg" alt="Darkest Exiles - Character progression" loading="lazy">
-                </div>
-                <div class="screenshot-item">
-                    <img src="images/screenshots/screenshot-5.jpeg" alt="Darkest Exiles - Strategic gameplay" loading="lazy">
-                </div>
+            </div>
+            <div class="screenshots-scroll-hint">
+                <span>Swipe to explore</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
             </div>
         </div>
     </section>
@@ -320,6 +328,150 @@
             const nav = document.getElementById('main-nav');
             nav.classList.toggle('active');
         }
+
+        // Scroll reveal animations
+        (function() {
+            const revealElements = document.querySelectorAll('.card, .section-header, .faq-item, .contact-card');
+            
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Add staggered delay for cards in the same section
+                        const parent = entry.target.closest('.features-grid, .faq-list');
+                        if (parent) {
+                            const siblings = Array.from(parent.children);
+                            const idx = siblings.indexOf(entry.target);
+                            entry.target.style.transitionDelay = `${idx * 0.1}s`;
+                        }
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        })();
+
+        // Lightbox functionality
+        (function() {
+            const screenshots = document.querySelectorAll('.screenshot-item img');
+            const screenshotSrcs = Array.from(screenshots).map(img => img.src);
+            let currentIndex = 0;
+            let isAnimating = false;
+
+            // Create lightbox element
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            lightbox.innerHTML = `
+                <button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>
+                <div class="lightbox-content">
+                    <button class="lightbox-close" aria-label="Close lightbox">×</button>
+                    <img src="" alt="Screenshot preview">
+                </div>
+                <button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>
+                <div class="lightbox-counter"></div>
+            `;
+            document.body.appendChild(lightbox);
+
+            const lightboxImg = lightbox.querySelector('.lightbox-content img');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+            const lightboxNext = lightbox.querySelector('.lightbox-next');
+            const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+
+            function openLightbox(index) {
+                currentIndex = index;
+                lightboxImg.src = screenshotSrcs[currentIndex];
+                lightboxCounter.textContent = `${currentIndex + 1} / ${screenshotSrcs.length}`;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.add('closing');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                setTimeout(() => {
+                    lightbox.classList.remove('closing');
+                }, 400);
+            }
+
+            function changeImage(newIndex, direction) {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                // Fade out current image
+                lightboxImg.classList.add('transitioning');
+                
+                setTimeout(() => {
+                    currentIndex = newIndex;
+                    lightboxImg.src = screenshotSrcs[currentIndex];
+                    lightboxCounter.textContent = `${currentIndex + 1} / ${screenshotSrcs.length}`;
+                    
+                    // Remove transitioning, add slide animation
+                    lightboxImg.classList.remove('transitioning');
+                    lightboxImg.classList.add(direction === 'next' ? 'slide-left' : 'slide-right');
+                    
+                    setTimeout(() => {
+                        lightboxImg.classList.remove('slide-left', 'slide-right');
+                        isAnimating = false;
+                    }, 350);
+                }, 150);
+            }
+
+            function nextImage() {
+                const newIndex = (currentIndex + 1) % screenshotSrcs.length;
+                changeImage(newIndex, 'next');
+            }
+
+            function prevImage() {
+                const newIndex = (currentIndex - 1 + screenshotSrcs.length) % screenshotSrcs.length;
+                changeImage(newIndex, 'prev');
+            }
+
+            // Event listeners
+            screenshots.forEach((img, index) => {
+                img.parentElement.addEventListener('click', () => openLightbox(index));
+            });
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', prevImage);
+            lightboxNext.addEventListener('click', nextImage);
+
+            // Close on backdrop click
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+
+            // Swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            lightbox.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            lightbox.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) nextImage();
+                    else prevImage();
+                }
+            }, { passive: true });
+        })();
     </script>
 </body>
 </html>
