@@ -26,6 +26,7 @@
                 </button>
                 <nav class="main-nav" id="main-nav">
                     <a href="index.html">Home</a>
+                    <a href="https://apps.apple.com/us/app/darkest-exiles/id6758465585" target="_blank" rel="noopener" class="nav-appstore">App Store</a>
                     <a href="https://discord.gg/4AS2ZUM2hf" target="_blank" rel="noopener" class="nav-discord">Discord</a>
                     <a href="support.html" class="active">Support</a>
                     <a href="privacy-policy.html">Privacy</a>
@@ -91,11 +92,27 @@
                 <h2>Frequently Asked Questions</h2>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <h3 class="faq-question">How do I restore my in-app purchases?</h3>
+                        <h3 class="faq-question">How do I join the closed beta?</h3>
                         <p class="faq-answer">
-                            Go to <strong>Settings</strong> within the game and tap <strong>Restore Purchases</strong>. 
-                            Make sure you're signed in with the same Apple ID you used for the original purchase. 
-                            Your purchases will be restored automatically.
+                            Join our <a href="https://discord.gg/4AS2ZUM2hf" target="_blank" rel="noopener">Discord server</a>
+                            to receive a TestFlight invite. Once you're in the server, you'll find instructions on how to
+                            get access to the beta.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What is TestFlight?</h3>
+                        <p class="faq-answer">
+                            TestFlight is Apple's official app for testing beta versions of iOS apps. It's free to download
+                            from the App Store. Once you accept a TestFlight invite, the beta version of Darkest Exiles will
+                            appear in your TestFlight app, where you can install and update it.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Will my beta progress carry over to the full release?</h3>
+                        <p class="faq-answer">
+                            Most likely not. Beta versions are often reset before the official launch to ensure a fresh start.
                         </p>
                     </div>
 
@@ -114,15 +131,6 @@
                             Go to <strong>Settings</strong> in the game and toggle off the <strong>Analytics</strong> 
                             option. We use privacy-focused, anonymized analytics to improve the game, but you can 
                             opt out at any time.
-                        </p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3 class="faq-question">Can I get a refund for an in-app purchase?</h3>
-                        <p class="faq-answer">
-                            In-app purchases are processed by Apple. To request a refund, visit 
-                            <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> 
-                            and sign in with your Apple ID. Find the purchase and select "Request a refund."
                         </p>
                     </div>
 
@@ -165,6 +173,7 @@
             <div class="footer-content">
                 <nav class="footer-links">
                     <a href="index.html">Home</a>
+                    <a href="https://apps.apple.com/us/app/darkest-exiles/id6758465585" target="_blank" rel="noopener">App Store</a>
                     <a href="https://discord.gg/4AS2ZUM2hf" target="_blank" rel="noopener">Discord</a>
                     <a href="support.html">Support</a>
                     <a href="privacy-policy.html">Privacy Policy</a>
@@ -183,6 +192,31 @@
             const nav = document.getElementById('main-nav');
             nav.classList.toggle('active');
         }
+
+        // Scroll reveal animations
+        (function() {
+            const revealElements = document.querySelectorAll('.card, .section-header, .faq-item, .contact-card');
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        const parent = entry.target.closest('.features-grid, .faq-list');
+                        if (parent) {
+                            const siblings = Array.from(parent.children);
+                            const idx = siblings.indexOf(entry.target);
+                            entry.target.style.transitionDelay = `${idx * 0.1}s`;
+                        }
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        })();
     </script>
 </body>
 </html>

@@ -346,6 +346,7 @@ p {
 .hero-title,
 .hero-tagline,
 .hero-description,
+.hero-cta-buttons,
 .hero .btn {
     opacity: 0;
     transform: translateY(30px);
@@ -357,6 +358,7 @@ p {
 .hero-title { animation-delay: 0.3s; }
 .hero-tagline { animation-delay: 0.4s; }
 .hero-description { animation-delay: 0.5s; }
+.hero-cta-buttons { animation-delay: 0.6s; }
 .hero .btn { animation-delay: 0.6s; }
 
 @keyframes heroFadeUp {
@@ -411,6 +413,32 @@ p {
     margin: 0 auto var(--space-xl);
 }
 
+/* Hero CTA Buttons */
+.hero-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.hero-beta-note {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0;
+    opacity: 0;
+    animation: heroFadeUp 0.8s ease forwards;
+    animation-delay: 0.7s;
+}
+
+/* CTA Section Buttons */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
 @media (max-width: 768px) {
     .hero {
         padding: var(--space-2xl) 0;
@@ -422,6 +450,26 @@ p {
 
     .hero-tagline {
         font-size: 1.25rem;
+    }
+
+    .hero-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
     }
 }
 
@@ -487,6 +535,31 @@ p {
 .btn-outline:hover {
     background-color: var(--primary);
     color: var(--text-on-primary);
+}
+
+/* App Store Button */
+.btn-appstore {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    color: #ffffff;
+    padding: var(--space-md) var(--space-xl);
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    border: 1px solid #333;
+}
+
+.btn-appstore:hover {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-appstore:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn-appstore svg {
+    flex-shrink: 0;
 }
 
 /* ========================================
@@ -886,6 +959,20 @@ p {
 
 .btn-discord svg {
     flex-shrink: 0;
+}
+
+.nav-appstore {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    background: linear-gradient(135deg, var(--surface-tertiary) 0%, var(--surface-elevated) 100%);
+    padding: var(--space-xs) var(--space-sm) !important;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.nav-appstore:hover {
+    color: var(--primary) !important;
+    border-color: var(--primary);
 }
 
 .nav-discord {
