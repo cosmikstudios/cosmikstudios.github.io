@@ -1303,6 +1303,15 @@ p {
     border-color: rgba(255, 255, 255, 0.25);
 }
 
+.community-card--itch .community-card-icon {
+    background: rgba(250, 92, 92, 0.12);
+    color: #FA5C5C;
+}
+
+.community-card--itch:hover {
+    border-color: rgba(250, 92, 92, 0.3);
+}
+
 .community-card-text h3 {
     font-family: var(--font-body);
     font-size: 0.9375rem;
@@ -2144,6 +2153,16 @@ p {
 .ep-hero-cta {
     opacity: 0;
     animation: fadeUp 0.7s ease forwards 0.7s;
+}
+
+/* itch.io Widget */
+.itch-widget {
+    margin-bottom: var(--space-md);
+}
+
+.itch-widget iframe {
+    max-width: 100%;
+    border-radius: 4px;
 }
 
 @media (max-width: 768px) {
