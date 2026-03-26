@@ -3,55 +3,66 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.cosmikstudios.dev/</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.cosmikstudios.dev/images/cosmik-logo.png</image:loc>
+      <image:title>Cosmik Studios Logo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.cosmikstudios.dev/darkest-exiles.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <image:image>
       <image:loc>https://www.cosmikstudios.dev/images/app-icon-large.png</image:loc>
       <image:title>Darkest Exiles App Icon</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.cosmikstudios.dev/images/screenshots/screenshot-1.jpeg</image:loc>
-      <image:title>Darkest Exiles Screenshot 1</image:title>
-      <image:caption>Guild management interface in Darkest Exiles</image:caption>
+      <image:loc>https://www.cosmikstudios.dev/images/screenshots/screenshot-1.png</image:loc>
+      <image:title>Darkest Exiles - Tactical Combat</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.cosmikstudios.dev/images/screenshots/screenshot-2.jpeg</image:loc>
-      <image:title>Darkest Exiles Screenshot 2</image:title>
-      <image:caption>Hero training system in Darkest Exiles</image:caption>
+      <image:loc>https://www.cosmikstudios.dev/images/screenshots/screenshot-2.png</image:loc>
+      <image:title>Darkest Exiles - Battle Tactics</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.cosmikstudios.dev/images/screenshots/screenshot-3.jpeg</image:loc>
-      <image:title>Darkest Exiles Screenshot 3</image:title>
-      <image:caption>Combat formations in Darkest Exiles</image:caption>
+      <image:loc>https://www.cosmikstudios.dev/images/screenshots/screenshot-3.png</image:loc>
+      <image:title>Darkest Exiles - Hero Progression</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.cosmikstudios.dev/exhumation-protocol.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.cosmikstudios.dev/images/exhumation-protocol/lab-overview.png</image:loc>
+      <image:title>The Exhumation Protocol - Extraction Lab</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.cosmikstudios.dev/images/screenshots/screenshot-4.jpeg</image:loc>
-      <image:title>Darkest Exiles Screenshot 4</image:title>
-      <image:caption>Character progression in Darkest Exiles</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.cosmikstudios.dev/images/screenshots/screenshot-5.jpeg</image:loc>
-      <image:title>Darkest Exiles Screenshot 5</image:title>
-      <image:caption>Strategic gameplay in Darkest Exiles</image:caption>
+      <image:loc>https://www.cosmikstudios.dev/images/exhumation-protocol/main-menu.png</image:loc>
+      <image:title>The Exhumation Protocol - Main Menu</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.cosmikstudios.dev/support.html</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cosmikstudios.dev/privacy-policy.html</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.cosmikstudios.dev/terms-of-service.html</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
 </urlset>
