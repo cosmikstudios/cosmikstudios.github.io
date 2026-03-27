@@ -1,0 +1,72 @@
+========================================
+DEVLOG METADATA (do not copy this block)
+========================================
+Title: Alien Corpses, Black Markets, and a Basement in Gary, Indiana
+Post type: General Update or Announcement
+Tags: devlog, body-horror, management-sim, indie
+Cover image: Use lab-overview screenshot (images/exhumation-protocol/lab-overview.png)
+Images to upload: lab-overview.png, procurement.png, street-view.png, freezer.png
+Language: English
+Visibility: Published
+Comments: Enabled
+========================================
+
+
+(Image: lab-overview.png)
+
+(H2) What is The Exhumation Protocol?
+
+A bureaucratic body-horror management sim. You run an underground organ-harvesting operation out of a rented basement in Gary, Indiana. The year is 1993. You have 30 days to make $1.5 million and disappear before government agents shut you down.
+
+Bid on stolen alien corpses. Extract their organs with precision. Sell to shady factions who each want different things. Balance profit against exposure. Pay your rent every night or lose everything.
+
+Steal. Extract. Sell. Disappear.
+
+(Separator)
+
+(H2) The Daily Loop
+
+Each day is split into four phases. Every decision carries forward.
+
+(Bold) Morning: Procurement
+Browse the black market terminal for alien specimen lots. Bid smart. Better specimens mean more valuable organs, but they cost more upfront.
+
+(Image: procurement.png)
+
+(Bold) Afternoon: Extraction
+Perform hands-on autopsies using specialized tools to harvest valuable organs. Precision matters. Sloppy cuts mean damaged goods.
+
+(Bold) Evening: Sale
+Balance faction offers. Higher payouts mean higher Heat. Every transaction is a calculated risk between profit and exposure.
+
+(Bold) Night: Upkeep
+Pay the silence fee, upgrade tools, and read intelligence via fax. The rent is due every night. Miss it, and you're done.
+
+(Image: freezer.png)
+
+(Separator)
+
+(H2) Where Things Stand
+
+The Exhumation Protocol is in early development for PC, built in Godot. I'm a solo developer working on this part-time alongside a full-time job. Progress is steady but not rushed. I'd rather get it right than get it out fast.
+
+Right now, the core loop is taking shape: procurement, extraction, sales, and upkeep cycles are being built out. The visual style is locked in. Desaturated greens, greys, and rust. CRT scanlines. Monospace terminals. The aesthetic of 90s government paranoia.
+
+(Image: street-view.png)
+
+(Separator)
+
+(H2) What's Next
+
+I'll be using this devlog to share progress, design decisions, and behind-the-scenes looks at how the game is coming together. If you're into bureaucratic horror, alien conspiracies, or management sims with teeth, stick around.
+
+Follow development here on itch.io, or join the community:
+
+(Bullet list)
+Discord: https://discord.gg/4AS2ZUM2hf
+X / Twitter: https://x.com/CosmikStudios
+Website: https://www.cosmikstudios.dev/exhumation-protocol
+
+(Separator)
+
+(Bold) What kind of shady faction would you sell alien organs to first? Drop a comment, I'm curious.
