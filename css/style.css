@@ -553,6 +553,38 @@ p {
     background: rgba(200, 176, 122, 0.05);
 }
 
+/* Steam Wishlist Button */
+.btn-steam {
+    background: linear-gradient(135deg, #1b2838 0%, #2a475e 100%);
+    color: #c7d5e0;
+    padding: var(--space-md) var(--space-xl);
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(102, 192, 244, 0.25);
+}
+
+.btn-steam:hover {
+    background: linear-gradient(135deg, #2a475e 0%, #3d6c8e 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(102, 192, 244, 0.2);
+    border-color: rgba(102, 192, 244, 0.5);
+}
+
+.btn-steam:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn-steam svg {
+    flex-shrink: 0;
+}
+
+.btn-steam-lg {
+    padding: var(--space-md) var(--space-2xl);
+    font-size: 1.0625rem;
+}
+
 /* ========================================
    Section Shared Styles
    ======================================== */
