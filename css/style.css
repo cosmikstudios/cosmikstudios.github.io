@@ -103,9 +103,9 @@ body.page-darkest-exiles {
 }
 
 /* ========================================
-   Exhumation Protocol Theme Overrides
+   Donor Zero Theme Overrides
    ======================================== */
-body.page-exhumation-protocol {
+body.page-donor-zero {
     --primary: #8B9A6B;
     --primary-dark: #6B7A4B;
     --primary-light: #A0B080;
@@ -1103,11 +1103,11 @@ p {
     z-index: 1;
 }
 
-.game-panel--ep .game-panel-bg {
-    background-image: url('../images/exhumation-protocol/lab-overview.webp');
+.game-panel--dz .game-panel-bg {
+    background-image: url('../images/donor-zero/lab-overview.webp');
 }
 
-.game-panel--ep::after {
+.game-panel--dz::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -1145,7 +1145,7 @@ p {
     border: 1px solid rgba(242, 166, 13, 0.25);
 }
 
-.game-panel--ep .game-panel-badge {
+.game-panel--dz .game-panel-badge {
     background: rgba(139, 154, 107, 0.15);
     color: #A0B080;
     border: 1px solid rgba(139, 154, 107, 0.25);
@@ -1162,20 +1162,10 @@ p {
     color: #F5F0E8;
 }
 
-.game-panel--ep .game-panel-title {
+.game-panel--dz .game-panel-title {
     font-family: 'Special Elite', monospace;
     color: #D0CCC0;
     letter-spacing: 0.02em;
-}
-
-.game-panel-wt {
-    display: block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.625rem;
-    font-weight: 400;
-    color: var(--text-tertiary);
-    letter-spacing: 0.06em;
-    margin-top: 0.35rem;
 }
 
 .game-panel-hook {
@@ -1186,7 +1176,7 @@ p {
     font-family: var(--font-body);
 }
 
-.game-panel--ep .game-panel-hook {
+.game-panel--dz .game-panel-hook {
     font-style: normal;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.875rem;
@@ -1217,13 +1207,13 @@ p {
     border-color: rgba(242, 166, 13, 0.5);
 }
 
-.game-panel--ep .game-panel-cta {
+.game-panel--dz .game-panel-cta {
     background: rgba(139, 154, 107, 0.12);
     color: #A0B080;
     border: 1px solid rgba(139, 154, 107, 0.3);
 }
 
-.game-panel--ep:hover .game-panel-cta {
+.game-panel--dz:hover .game-panel-cta {
     background: rgba(139, 154, 107, 0.2);
     border-color: rgba(139, 154, 107, 0.5);
 }
@@ -2064,11 +2054,11 @@ p {
 }
 
 /* ========================================
-   EXHUMATION PROTOCOL PAGE
+   DONOR ZERO PAGE
    ======================================== */
 
-/* EP Hero */
-.ep-hero {
+/* DZ Hero */
+.dz-hero {
     position: relative;
     min-height: 520px;
     display: flex;
@@ -2077,7 +2067,7 @@ p {
     border-bottom: 1px solid var(--border);
 }
 
-.ep-hero-bg {
+.dz-hero-bg {
     position: absolute;
     inset: 0;
     background-size: cover;
@@ -2085,7 +2075,7 @@ p {
     filter: brightness(0.4) saturate(0.7);
 }
 
-.ep-hero::after {
+.dz-hero::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -2100,7 +2090,7 @@ p {
 }
 
 /* Scanline overlay for 90s CRT feel */
-.ep-hero::before {
+.dz-hero::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -2115,14 +2105,14 @@ p {
     );
 }
 
-.ep-hero .container {
+.dz-hero .container {
     position: relative;
     z-index: 3;
     padding-top: var(--space-4xl);
     padding-bottom: var(--space-2xl);
 }
 
-.ep-hero-badge {
+.dz-hero-badge {
     display: inline-block;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.6875rem;
@@ -2139,7 +2129,7 @@ p {
     animation: fadeUp 0.6s ease forwards 0.2s;
 }
 
-.ep-hero-title {
+.dz-hero-title {
     font-family: 'Special Elite', monospace;
     font-size: 3rem;
     font-weight: 400;
@@ -2150,7 +2140,7 @@ p {
     animation: fadeUp 0.7s ease forwards 0.35s;
 }
 
-.ep-hero-working-title {
+.dz-hero-working-title {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
     font-weight: 400;
@@ -2162,7 +2152,7 @@ p {
     animation: fadeUp 0.6s ease forwards 0.42s;
 }
 
-.ep-hero-tagline {
+.dz-hero-tagline {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1.125rem;
     color: var(--primary);
@@ -2172,7 +2162,7 @@ p {
     animation: fadeUp 0.7s ease forwards 0.5s;
 }
 
-.ep-hero-description {
+.dz-hero-description {
     font-size: 1rem;
     line-height: 1.7;
     color: var(--text-secondary);
@@ -2182,7 +2172,7 @@ p {
     animation: fadeUp 0.7s ease forwards 0.6s;
 }
 
-.ep-hero-cta {
+.dz-hero-cta {
     opacity: 0;
     animation: fadeUp 0.7s ease forwards 0.7s;
 }
@@ -2198,27 +2188,27 @@ p {
 }
 
 @media (max-width: 768px) {
-    .ep-hero {
+    .dz-hero {
         min-height: 420px;
     }
 
-    .ep-hero-title {
+    .dz-hero-title {
         font-size: 2rem;
     }
 
-    .ep-hero-tagline {
+    .dz-hero-tagline {
         font-size: 0.9375rem;
     }
 }
 
-/* EP Concept Pitch */
-.ep-pitch {
+/* DZ Concept Pitch */
+.dz-pitch {
     padding: var(--space-3xl) 0;
     text-align: center;
     border-bottom: 1px solid var(--border);
 }
 
-.ep-pitch-text {
+.dz-pitch-text {
     font-family: 'Special Elite', monospace;
     font-size: 1.375rem;
     line-height: 1.6;
@@ -2230,28 +2220,28 @@ p {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.ep-pitch-text.revealed {
+.dz-pitch-text.revealed {
     opacity: 1;
     transform: translateY(0);
 }
 
-.ep-pitch-text em {
+.dz-pitch-text em {
     color: var(--primary);
     font-style: normal;
 }
 
-/* EP Gallery */
-.ep-gallery {
+/* DZ Gallery */
+.dz-gallery {
     padding: var(--space-3xl) 0;
 }
 
-.ep-gallery-grid {
+.dz-gallery-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
 }
 
-.ep-gallery-item {
+.dz-gallery-item {
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid var(--border);
@@ -2261,21 +2251,21 @@ p {
     transition: all 0.5s ease;
 }
 
-.ep-gallery-item.revealed {
+.dz-gallery-item.revealed {
     opacity: 1;
     transform: translateY(0);
 }
 
-.ep-gallery-item:nth-child(2).revealed { transition-delay: 0.1s; }
-.ep-gallery-item:nth-child(3).revealed { transition-delay: 0.15s; }
-.ep-gallery-item:nth-child(4).revealed { transition-delay: 0.2s; }
+.dz-gallery-item:nth-child(2).revealed { transition-delay: 0.1s; }
+.dz-gallery-item:nth-child(3).revealed { transition-delay: 0.15s; }
+.dz-gallery-item:nth-child(4).revealed { transition-delay: 0.2s; }
 
-.ep-gallery-item:hover {
+.dz-gallery-item:hover {
     border-color: var(--primary);
     box-shadow: var(--shadow-lg);
 }
 
-.ep-gallery-item img {
+.dz-gallery-item img {
     width: 100%;
     height: 260px;
     object-fit: cover;
@@ -2283,12 +2273,12 @@ p {
     filter: saturate(0.8);
 }
 
-.ep-gallery-item:hover img {
+.dz-gallery-item:hover img {
     transform: scale(1.05);
     filter: saturate(1);
 }
 
-.ep-gallery-label {
+.dz-gallery-label {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -2303,29 +2293,29 @@ p {
 }
 
 @media (max-width: 768px) {
-    .ep-gallery-grid {
+    .dz-gallery-grid {
         grid-template-columns: 1fr;
     }
 
-    .ep-gallery-item img {
+    .dz-gallery-item img {
         height: 200px;
     }
 }
 
-/* EP Mechanics */
-.ep-mechanics {
+/* DZ Mechanics */
+.dz-mechanics {
     padding: var(--space-3xl) 0;
     border-top: 1px solid var(--border);
     background: var(--surface);
 }
 
-.ep-mechanics-grid {
+.dz-mechanics-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-md);
 }
 
-.ep-phase-card {
+.dz-phase-card {
     background: var(--surface-secondary);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -2337,25 +2327,25 @@ p {
     transition: all 0.4s ease;
 }
 
-.ep-phase-card.revealed {
+.dz-phase-card.revealed {
     opacity: 1;
     transform: translateY(0);
 }
 
-.ep-phase-card:nth-child(2).revealed { transition-delay: 0.1s; }
-.ep-phase-card:nth-child(3).revealed { transition-delay: 0.2s; }
-.ep-phase-card:nth-child(4).revealed { transition-delay: 0.3s; }
+.dz-phase-card:nth-child(2).revealed { transition-delay: 0.1s; }
+.dz-phase-card:nth-child(3).revealed { transition-delay: 0.2s; }
+.dz-phase-card:nth-child(4).revealed { transition-delay: 0.3s; }
 
-.ep-phase-card:hover {
+.dz-phase-card:hover {
     border-color: var(--primary);
     transform: translateY(-4px);
 }
 
-.ep-phase-card.revealed:hover {
+.dz-phase-card.revealed:hover {
     transform: translateY(-4px);
 }
 
-.ep-phase-time {
+.dz-phase-time {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.6875rem;
     font-weight: 600;
@@ -2365,14 +2355,14 @@ p {
     margin-bottom: var(--space-sm);
 }
 
-.ep-phase-name {
+.dz-phase-name {
     font-family: 'Special Elite', monospace;
     font-size: 1.125rem;
     color: var(--text-primary);
     margin-bottom: var(--space-sm);
 }
 
-.ep-phase-desc {
+.dz-phase-desc {
     font-size: 0.8125rem;
     line-height: 1.6;
     color: var(--text-secondary);
@@ -2380,7 +2370,7 @@ p {
 }
 
 /* Phase card corner index */
-.ep-phase-card::before {
+.dz-phase-card::before {
     content: attr(data-phase);
     position: absolute;
     top: var(--space-sm);
@@ -2393,26 +2383,26 @@ p {
 }
 
 @media (max-width: 768px) {
-    .ep-mechanics-grid {
+    .dz-mechanics-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .ep-mechanics-grid {
+    .dz-mechanics-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* EP CTA */
-.ep-cta {
+/* DZ CTA */
+.dz-cta {
     padding: var(--space-3xl) 0;
     text-align: center;
     border-top: 1px solid var(--border);
     position: relative;
 }
 
-.ep-cta::before {
+.dz-cta::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -2424,7 +2414,7 @@ p {
     pointer-events: none;
 }
 
-.ep-cta-badge {
+.dz-cta-badge {
     display: inline-block;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
@@ -2440,7 +2430,7 @@ p {
     position: relative;
 }
 
-.ep-cta h2 {
+.dz-cta h2 {
     font-family: 'Special Elite', monospace;
     font-size: 1.75rem;
     color: var(--text-primary);
@@ -2448,7 +2438,7 @@ p {
     position: relative;
 }
 
-.ep-cta p {
+.dz-cta p {
     color: var(--text-secondary);
     margin-bottom: var(--space-xl);
     position: relative;

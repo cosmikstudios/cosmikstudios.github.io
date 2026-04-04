@@ -1,4 +1,4 @@
-# itch.io Devlog Guide -- The Exhumation Protocol
+# itch.io Devlog Guide -- Donor Zero
 
 ## Strategy
 
@@ -10,7 +10,7 @@ We use itch.io exclusively as a devlog/community platform. Steam will be the sto
 
 ### Step-by-step on itch.io
 
-1. Go to: https://cosmikstudios.itch.io/the-exhumation-protocol/devlog/new
+1. Go to: https://cosmikstudios.itch.io/donor-zero/devlog/new
 2. Fill in the form fields:
    - **Title:** Descriptive, curiosity-driven. Never just "Devlog #1". See title guidelines below.
    - **Post type:** Pick the most accurate category. Use "General Update or Announcement" for regular posts. Use "Major Update or Launch" only for significant milestones (demo release, trailer drop). Use long-form types (Game Design, Tech Discussion) for deeper posts.
@@ -136,7 +136,7 @@ These annotations appear in parentheses before each text block in `.txt` files:
 
 ## Tag Suggestions
 
-Reusable tags for The Exhumation Protocol devlog posts:
+Reusable tags for Donor Zero devlog posts:
 - `devlog`
 - `body-horror`
 - `management-sim`
@@ -155,5 +155,5 @@ Pick 2-4 per post based on content.
 
 - Discord: https://discord.gg/4AS2ZUM2hf
 - X/Twitter: https://x.com/CosmikStudios
-- Website: https://www.cosmikstudios.dev/exhumation-protocol
-- itch.io page: https://cosmikstudios.itch.io/the-exhumation-protocol
+- Website: https://www.cosmikstudios.dev/donor-zero
+- itch.io page: https://cosmikstudios.itch.io/donor-zero

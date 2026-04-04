@@ -13,13 +13,13 @@ Static website for Cosmik Studios (cosmikstudios.dev), hosted on GitHub Pages. P
 ```
 index.html                  Studio homepage (game showcase, about, community)
 darkest-exiles.html         Darkest Exiles dedicated page
-exhumation-protocol.html    The Exhumation Protocol dedicated page
+donor-zero.html             Donor Zero dedicated page
 support.html                Support & FAQ
 privacy-policy.html         Privacy policy
 terms-of-service.html       Terms of service
 css/style.css               Single stylesheet (shared base + per-game themes)
 images/                     Darkest Exiles assets (screenshots, icons, logo)
-images/exhumation-protocol/ Exhumation Protocol assets (PNG + WebP pairs)
+images/donor-zero/          Donor Zero assets (PNG + WebP pairs)
 sitemap.xml                 SEO sitemap
 robots.txt                  Crawl rules
 CNAME                       Custom domain config
@@ -35,11 +35,11 @@ CNAME                       Custom domain config
 - **CSS theme class:** `body.page-darkest-exiles`
 - **Tagline:** "You don't fight. You prepare them to."
 
-### The Exhumation Protocol (working title)
+### Donor Zero
 - **Game repo:** C:\Users\Administrator\Projects\alien-corpse-seller
 - **Platform:** PC (in development, Godot 4.6)
 - **Aesthetic:** 90s paranoia, desaturated greens/greys/rust, Special Elite + IBM Plex Mono fonts, CRT scanline effects
-- **CSS theme class:** `body.page-exhumation-protocol`
+- **CSS theme class:** `body.page-donor-zero`
 - **Tagline:** "Steal. Extract. Sell. Disappear."
 
 ## CSS architecture
@@ -47,7 +47,7 @@ CNAME                       Custom domain config
 Single `css/style.css` file with CSS variable overrides per game theme:
 - `:root` defines the studio-neutral palette (muted gold, OLED dark)
 - `body.page-darkest-exiles` overrides vars with gold/brass palette
-- `body.page-exhumation-protocol` overrides vars with desaturated green/grey palette
+- `body.page-donor-zero` overrides vars with desaturated green/grey palette
 - Shared components (header, footer, buttons, cards, lightbox) work across all themes
 
 ## Social links
@@ -73,7 +73,7 @@ Cloudflare Web Analytics on every page:
 
 ## Navigation pattern
 
-All pages share the same header nav: `Darkest Exiles | Exhumation Protocol | Support | [Discord icon] [X icon]`
+All pages share the same header nav: `Darkest Exiles | Donor Zero | Support | [Discord icon] [X icon]`
 
 Legal pages (Privacy, Terms) are footer-only links.
 

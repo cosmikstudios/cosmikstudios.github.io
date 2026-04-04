@@ -4,7 +4,7 @@ DEVLOG METADATA (do not copy this block)
 Title: Alien Corpses, Black Markets, and a Basement in Gary, Indiana
 Post type: General Update or Announcement
 Tags: devlog, body-horror, management-sim, indie
-Cover image: Use lab-overview screenshot (images/exhumation-protocol/lab-overview.png)
+Cover image: Use lab-overview screenshot (images/donor-zero/lab-overview.png)
 Images to upload: lab-overview.png, procurement.png, street-view.png, freezer.png
 Language: English
 Visibility: Published
@@ -14,7 +14,7 @@ Comments: Enabled
 
 (Image: lab-overview.png)
 
-(H2) What is The Exhumation Protocol?
+(H2) What is Donor Zero?
 
 A bureaucratic body-horror management sim. You run an underground organ-harvesting operation out of a rented basement in Gary, Indiana. The year is 1993. You have 30 days to make $1.5 million and disappear before government agents shut you down.
 
@@ -48,7 +48,7 @@ Pay the silence fee, upgrade tools, and read intelligence via fax. The rent is d
 
 (H2) Where Things Stand
 
-The Exhumation Protocol is in early development for PC, built in Godot. I'm a solo developer working on this part-time alongside a full-time job. Progress is steady but not rushed. I'd rather get it right than get it out fast.
+Donor Zero is in early development for PC, built in Godot. I'm a solo developer working on this part-time alongside a full-time job. Progress is steady but not rushed. I'd rather get it right than get it out fast.
 
 Right now, the core loop is taking shape: procurement, extraction, sales, and upkeep cycles are being built out. The visual style is locked in. Desaturated greens, greys, and rust. CRT scanlines. Monospace terminals. The aesthetic of 90s government paranoia.
 
@@ -65,7 +65,7 @@ Follow development here on itch.io, or join the community:
 (Bullet list)
 Discord: https://discord.gg/4AS2ZUM2hf
 X / Twitter: https://x.com/CosmikStudios
-Website: https://www.cosmikstudios.dev/exhumation-protocol
+Website: https://www.cosmikstudios.dev/donor-zero
 
 (Separator)
 
