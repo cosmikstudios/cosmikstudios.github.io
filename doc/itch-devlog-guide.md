@@ -154,6 +154,6 @@ Pick 2-4 per post based on content.
 ## Links to Include in Every Post
 
 - Discord: https://discord.gg/4AS2ZUM2hf
-- X/Twitter: https://x.com/CosmikStudios
+- X/Twitter: https://x.com/DonorZero
 - Website: https://www.cosmikstudios.dev/donor-zero
 - itch.io page: https://cosmikstudios.itch.io/donor-zero

@@ -53,7 +53,8 @@ Single `css/style.css` file with CSS variable overrides per game theme:
 ## Social links
 
 - **Discord:** https://discord.gg/4AS2ZUM2hf
-- **X/Twitter:** https://x.com/CosmikStudios
+- **X/Twitter (studio):** https://x.com/CosmikStudios
+- **X/Twitter (Donor Zero):** https://x.com/DonorZero
 - **YouTube:** https://www.youtube.com/@UnkimTV
 
 Social icons in the nav use branded colors: Discord blurple (#5865F2), X white (#F0F0F0). Applied via `.social-discord` and `.social-x` classes.
