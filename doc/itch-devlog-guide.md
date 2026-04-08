@@ -90,7 +90,7 @@ These annotations appear in parentheses before each text block in `.txt` files:
 - Longer posts (800+ words) only for deep-dives, postmortems, or design essays.
 
 ### Title conventions
-- Descriptive and specific. Not "Devlog #3" but "Alien Organs, Black Markets, and a Basement in Gary, Indiana."
+- Descriptive and specific. Not "Devlog #3" but "Alien Organs, Black Markets, and a Basement in Dayton, Ohio."
 - Curiosity hooks work well. Hint at content without giving everything away.
 - Casual energy is fine. Exclamation points are okay in moderation.
 
