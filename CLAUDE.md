@@ -16,6 +16,7 @@ darkest-exiles.html         Darkest Exiles dedicated page
 donor-zero.html             Donor Zero dedicated page
 support.html                Support & FAQ (Darkest Exiles focused; linked from the App Store listing)
 press.html                  Press kit (placeholder, noindex until content is ready)
+streaming-policy.html        Streaming & content creator policy for Donor Zero (DMCA-safe declaration)
 404.html                    Custom 404 page (uses absolute paths so it works at any URL)
 privacy-policy.html         Privacy policy
 terms-of-service.html       Terms of service
@@ -86,7 +87,7 @@ Cloudflare Web Analytics on every page:
 
 All pages share the same header nav: `Darkest Exiles | Donor Zero | Support | [Discord icon] [X icon] [itch.io icon] [Steam icon]`
 
-Press, Privacy, and Terms are footer-only links. Pages use canonical URLs with the `.html` extension; keep canonical, og:url, sitemap, and internal links consistent.
+Press, Streaming, Privacy, and Terms are footer-only links (in that order, after Support). Pages use canonical URLs with the `.html` extension; keep canonical, og:url, sitemap, and internal links consistent.
 
 ## Fonts and scripts
 
