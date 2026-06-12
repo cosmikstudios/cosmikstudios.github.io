@@ -14,14 +14,19 @@ Static website for Cosmik Studios (cosmikstudios.dev), hosted on GitHub Pages. P
 index.html                  Studio homepage (game showcase, about, community)
 darkest-exiles.html         Darkest Exiles dedicated page
 donor-zero.html             Donor Zero dedicated page
-support.html                Support & FAQ
+support.html                Support & FAQ (Darkest Exiles focused; linked from the App Store listing)
+press.html                  Press kit (placeholder, noindex until content is ready)
+404.html                    Custom 404 page (uses absolute paths so it works at any URL)
 privacy-policy.html         Privacy policy
 terms-of-service.html       Terms of service
 css/style.css               Single stylesheet (shared base + per-game themes)
+js/site.js                  Shared JS: mobile nav, scroll reveal, lightbox (all pages)
 images/                     Darkest Exiles assets (screenshots, icons, logo)
-images/donor-zero/          Donor Zero assets (PNG + WebP pairs)
+images/donor-zero/          Donor Zero art by Marian (PNG + WebP pairs, sourced from the game repo)
+images/og/                  1200x630 social share cards (og-studio, og-darkest-exiles, og-donor-zero)
 sitemap.xml                 SEO sitemap
 robots.txt                  Crawl rules
+llms.txt                    Site summary for AI agents
 CNAME                       Custom domain config
 ```
 
@@ -36,8 +41,9 @@ CNAME                       Custom domain config
 - **Tagline:** "You don't fight. You prepare them to."
 
 ### Donor Zero
-- **Game repo:** C:\Users\Administrator\Projects\alien-corpse-seller
+- **Game repo:** C:\Users\Administrator\Projects\exhumation-protocol
 - **Platform:** PC (in development, Godot 4.6)
+- **Title is final** (no "working title" qualifiers anywhere)
 - **Aesthetic:** 90s paranoia, desaturated greens/greys/rust, Special Elite + IBM Plex Mono fonts, CRT scanline effects
 - **CSS theme class:** `body.page-donor-zero`
 - **Tagline:** "Steal. Extract. Sell. Disappear."
@@ -55,9 +61,12 @@ Single `css/style.css` file with CSS variable overrides per game theme:
 - **Discord:** https://discord.gg/4AS2ZUM2hf
 - **X/Twitter (studio):** https://x.com/CosmikStudios
 - **X/Twitter (Donor Zero):** https://x.com/DonorZero
-- **YouTube:** https://www.youtube.com/@UnkimTV
+- **Mastodon (Donor Zero):** https://mastodon.gamedev.place/@donorzero
+- **Bluesky (Donor Zero):** https://bsky.app/profile/donorzero.bsky.social
 
 Social icons in the nav use branded colors: Discord blurple (#5865F2), X white (#F0F0F0). Applied via `.social-discord` and `.social-x` classes.
+
+Top nav social icons are reserved for Discord, X, itch.io, and Steam. Mastodon and Bluesky are Donor Zero accounts only (not studio-wide), so they appear only as Follow buttons in the Donor Zero page CTA, never in the nav or on the homepage.
 
 ## Analytics
 
@@ -69,14 +78,20 @@ Cloudflare Web Analytics on every page:
 ## Writing style
 
 - No emdashes. Use periods, commas, or rewrite the sentence.
+- Never use the word "bureaucratic" (any form). Donor Zero is described as "a body-horror management sim".
 - Keep copy concise and direct. Avoid filler or marketing fluff.
 - The studio is described as a part-time hobby operation, not a company.
 
 ## Navigation pattern
 
-All pages share the same header nav: `Darkest Exiles | Donor Zero | Support | [Discord icon] [X icon]`
+All pages share the same header nav: `Darkest Exiles | Donor Zero | Support | [Discord icon] [X icon] [itch.io icon] [Steam icon]`
 
-Legal pages (Privacy, Terms) are footer-only links.
+Press, Privacy, and Terms are footer-only links. Pages use canonical URLs with the `.html` extension; keep canonical, og:url, sitemap, and internal links consistent.
+
+## Fonts and scripts
+
+- Google Fonts load via `<link rel="preconnect">` + `<link rel="stylesheet">` in each page head (NOT `@import` in CSS). Base set on all pages: Cormorant Garamond, DM Sans, IBM Plex Mono. Darkest Exiles adds Cinzel; Donor Zero adds Special Elite.
+- All interactive behavior lives in `js/site.js` (deferred). Each head also has a tiny inline `document.documentElement.classList.add('js')` snippet; reveal animations only hide content when `.js` is present, so the site works without JavaScript.
 
 ## Image optimization
 

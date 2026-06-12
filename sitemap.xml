@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.cosmikstudios.dev/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://www.cosmikstudios.dev/darkest-exiles.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://www.cosmikstudios.dev/donor-zero.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -43,13 +43,17 @@
       <image:title>Donor Zero - Extraction Lab</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.cosmikstudios.dev/images/donor-zero/main-menu.png</image:loc>
-      <image:title>Donor Zero - Main Menu</image:title>
+      <image:loc>https://www.cosmikstudios.dev/images/donor-zero/basement-background.png</image:loc>
+      <image:title>Donor Zero - The Basement</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cosmikstudios.dev/images/donor-zero/pale-base.png</image:loc>
+      <image:title>Donor Zero - The Pale</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.cosmikstudios.dev/support.html</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -61,13 +65,13 @@
   </url>
   <url>
     <loc>https://www.cosmikstudios.dev/privacy-policy.html</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.cosmikstudios.dev/terms-of-service.html</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

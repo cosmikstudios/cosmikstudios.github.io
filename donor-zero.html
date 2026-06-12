@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Donor Zero. A bureaucratic body-horror management sim. Harvest alien organs in a basement. Dayton, Ohio, 1993. In development by Cosmik Studios.">
+    <meta name="description" content="Donor Zero. A body-horror management sim. Harvest alien organs in a basement. Dayton, Ohio, 1993. In development by Cosmik Studios.">
     <meta name="keywords" content="Donor Zero, PC game, management sim, indie game, body horror, Cosmik Studios, Papers Please">
     <meta name="author" content="Cosmik Studios">
 
@@ -11,20 +11,23 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Cosmik Studios">
     <meta property="og:title" content="Donor Zero | Cosmik Studios">
-    <meta property="og:description" content="A bureaucratic body-horror management sim. Steal. Extract. Sell. Disappear. In development for PC.">
-    <meta property="og:url" content="https://www.cosmikstudios.dev/donor-zero">
-    <meta property="og:image" content="https://www.cosmikstudios.dev/images/donor-zero/lab-overview.png">
+    <meta property="og:description" content="A body-horror management sim. Steal. Extract. Sell. Disappear. In development for PC.">
+    <meta property="og:url" content="https://www.cosmikstudios.dev/donor-zero.html">
+    <meta property="og:image" content="https://www.cosmikstudios.dev/images/og/og-donor-zero.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="The extraction lab in Donor Zero">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@DonorZero">
     <meta name="twitter:title" content="Donor Zero | Cosmik Studios">
-    <meta name="twitter:description" content="A bureaucratic body-horror management sim. Steal. Extract. Sell. Disappear. In development for PC.">
-    <meta name="twitter:image" content="https://www.cosmikstudios.dev/images/donor-zero/lab-overview.png">
+    <meta name="twitter:description" content="A body-horror management sim. Steal. Extract. Sell. Disappear. In development for PC.">
+    <meta name="twitter:image" content="https://www.cosmikstudios.dev/images/og/og-donor-zero.jpg">
 
     <!-- SEO -->
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.cosmikstudios.dev/donor-zero">
+    <link rel="canonical" href="https://www.cosmikstudios.dev/donor-zero.html">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/app-icon.png">
@@ -39,7 +42,15 @@
         "name": "Donor Zero",
         "gamePlatform": "PC",
         "applicationCategory": "GameApplication",
-        "description": "A bureaucratic body-horror management sim where you harvest alien organs in a basement. Set in Dayton, Ohio, 1993.",
+        "description": "A body-horror management sim where you harvest alien organs in a basement. Set in Dayton, Ohio, 1993.",
+        "url": "https://www.cosmikstudios.dev/donor-zero.html",
+        "image": "https://www.cosmikstudios.dev/images/og/og-donor-zero.jpg",
+        "sameAs": [
+            "https://store.steampowered.com/app/4580200/Donor_Zero/",
+            "https://x.com/DonorZero",
+            "https://mastodon.gamedev.place/@donorzero",
+            "https://bsky.app/profile/donorzero.bsky.social"
+        ],
         "author": {
             "@type": "Organization",
             "name": "Cosmik Studios",
@@ -49,7 +60,12 @@
     </script>
 
     <title>Donor Zero | Cosmik Studios</title>
+    <meta name="theme-color" content="#0A0C0A">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=DM+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Special+Elite&amp;display=swap">
     <link rel="stylesheet" href="css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="page-donor-zero">
     <!-- Header -->
@@ -61,7 +77,7 @@
                     <span>Cosmik Studios</span>
                     <span class="logo-author">by Mário Cosme</span>
                 </a>
-                <button class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">&#9776;</button>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
                 <nav class="main-nav" id="main-nav">
                     <a href="darkest-exiles.html">Darkest Exiles</a>
                     <a href="donor-zero.html" class="active">Donor Zero</a>
@@ -87,14 +103,13 @@
 
     <!-- Hero -->
     <section class="dz-hero">
-        <div class="dz-hero-bg" style="background-image: url('images/donor-zero/main-menu.webp')"></div>
+        <div class="dz-hero-bg" style="background-image: url('images/donor-zero/basement-background.webp')"></div>
         <div class="container">
             <span class="dz-hero-badge">PC / Coming to Steam</span>
             <h1 class="dz-hero-title">Donor<br>Zero</h1>
-            <p class="dz-hero-working-title">( working title )</p>
             <p class="dz-hero-tagline">Steal. Extract. Sell. Disappear.</p>
             <p class="dz-hero-description">
-                A bureaucratic body-horror management sim. Bid on stolen alien corpses, harvest their organs,
+                A body-horror management sim. Bid on stolen alien corpses, harvest their organs,
                 sell to shady factions, and avoid the government agents closing in. You have 30 days to make
                 $1.5 million and vanish.
             </p>
@@ -115,7 +130,7 @@
     <section class="dz-pitch">
         <div class="container">
             <p class="dz-pitch-text">
-                Bureaucratic tension meets hands-on puzzle mechanics<br>
+                90s paranoia meets hands-on puzzle mechanics<br>
                 in a basement full of alien corpses.<br>
                 Dayton, Ohio, 1993.
             </p>
@@ -139,24 +154,17 @@
                 </div>
                 <div class="dz-gallery-item">
                     <picture>
-                        <source srcset="images/donor-zero/procurement.webp" type="image/webp">
-                        <img src="images/donor-zero/procurement.png" alt="Procurement terminal for bidding on alien specimens" loading="lazy">
+                        <source srcset="images/donor-zero/basement-background.webp" type="image/webp">
+                        <img src="images/donor-zero/basement-background.png" alt="The rented basement" loading="lazy">
                     </picture>
-                    <span class="dz-gallery-label">Procurement</span>
+                    <span class="dz-gallery-label">The Basement</span>
                 </div>
                 <div class="dz-gallery-item">
                     <picture>
-                        <source srcset="images/donor-zero/street-view.webp" type="image/webp">
-                        <img src="images/donor-zero/street-view.png" alt="Street view from the basement window" loading="lazy">
+                        <source srcset="images/donor-zero/pale-base.webp" type="image/webp">
+                        <img src="images/donor-zero/pale-base.png" alt="The Pale, an alien specimen" loading="lazy">
                     </picture>
-                    <span class="dz-gallery-label">Street View</span>
-                </div>
-                <div class="dz-gallery-item">
-                    <picture>
-                        <source srcset="images/donor-zero/freezer.webp" type="image/webp">
-                        <img src="images/donor-zero/freezer.png" alt="The specimen freezer" loading="lazy">
-                    </picture>
-                    <span class="dz-gallery-label">The Freezer</span>
+                    <span class="dz-gallery-label">The Pale</span>
                 </div>
             </div>
         </div>
@@ -213,6 +221,14 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     Follow on X
                 </a>
+                <a href="https://mastodon.gamedev.place/@donorzero" target="_blank" rel="me noopener" class="btn btn-ghost">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
+                    Follow on Mastodon
+                </a>
+                <a href="https://bsky.app/profile/donorzero.bsky.social" target="_blank" rel="noopener" class="btn btn-ghost">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
+                    Follow on Bluesky
+                </a>
             </div>
         </div>
     </section>
@@ -229,6 +245,7 @@
                     <a href="darkest-exiles.html">Darkest Exiles</a>
                     <a href="donor-zero.html">Donor Zero</a>
                     <a href="support.html">Support</a>
+                    <a href="press.html">Press</a>
                     <a href="streaming-policy.html">Streaming</a>
                     <a href="privacy-policy.html">Privacy</a>
                     <a href="terms-of-service.html">Terms</a>
@@ -252,111 +269,7 @@
         </div>
     </footer>
 
-    <script>
-        function toggleNav() {
-            document.getElementById('main-nav').classList.toggle('active');
-        }
-
-        // Scroll reveal
-        (function() {
-            const els = document.querySelectorAll('.dz-pitch-text, .dz-gallery-item, .dz-phase-card, .section-header');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-            els.forEach(el => observer.observe(el));
-        })();
-
-        // Lightbox for gallery
-        (function() {
-            const galleryImages = document.querySelectorAll('.dz-gallery-item img');
-            const imageSrcs = Array.from(galleryImages).map(img => img.src);
-            let currentIndex = 0;
-            let isAnimating = false;
-
-            const lightbox = document.createElement('div');
-            lightbox.className = 'lightbox';
-            lightbox.innerHTML = `
-                <button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>
-                <div class="lightbox-content">
-                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
-                    <img src="" alt="Gallery preview">
-                </div>
-                <button class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>
-                <div class="lightbox-counter"></div>
-            `;
-            document.body.appendChild(lightbox);
-
-            const lbImg = lightbox.querySelector('.lightbox-content img');
-            const lbClose = lightbox.querySelector('.lightbox-close');
-            const lbPrev = lightbox.querySelector('.lightbox-prev');
-            const lbNext = lightbox.querySelector('.lightbox-next');
-            const lbCounter = lightbox.querySelector('.lightbox-counter');
-
-            function open(index) {
-                currentIndex = index;
-                lbImg.src = imageSrcs[currentIndex];
-                lbCounter.textContent = `${currentIndex + 1} / ${imageSrcs.length}`;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function close() {
-                lightbox.classList.add('closing');
-                lightbox.classList.remove('active');
-                document.body.style.overflow = '';
-                setTimeout(() => lightbox.classList.remove('closing'), 400);
-            }
-
-            function change(newIndex, direction) {
-                if (isAnimating) return;
-                isAnimating = true;
-                lbImg.classList.add('transitioning');
-                setTimeout(() => {
-                    currentIndex = newIndex;
-                    lbImg.src = imageSrcs[currentIndex];
-                    lbCounter.textContent = `${currentIndex + 1} / ${imageSrcs.length}`;
-                    lbImg.classList.remove('transitioning');
-                    lbImg.classList.add(direction === 'next' ? 'slide-left' : 'slide-right');
-                    setTimeout(() => {
-                        lbImg.classList.remove('slide-left', 'slide-right');
-                        isAnimating = false;
-                    }, 350);
-                }, 150);
-            }
-
-            galleryImages.forEach((img, i) => {
-                img.closest('.dz-gallery-item').style.cursor = 'pointer';
-                img.closest('.dz-gallery-item').addEventListener('click', () => open(i));
-            });
-
-            lbClose.addEventListener('click', close);
-            lbPrev.addEventListener('click', () => change((currentIndex - 1 + imageSrcs.length) % imageSrcs.length, 'prev'));
-            lbNext.addEventListener('click', () => change((currentIndex + 1) % imageSrcs.length, 'next'));
-            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
-
-            document.addEventListener('keydown', (e) => {
-                if (!lightbox.classList.contains('active')) return;
-                if (e.key === 'Escape') close();
-                if (e.key === 'ArrowRight') change((currentIndex + 1) % imageSrcs.length, 'next');
-                if (e.key === 'ArrowLeft') change((currentIndex - 1 + imageSrcs.length) % imageSrcs.length, 'prev');
-            });
-
-            let touchStartX = 0;
-            lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-            lightbox.addEventListener('touchend', (e) => {
-                const diff = touchStartX - e.changedTouches[0].screenX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) change((currentIndex + 1) % imageSrcs.length, 'next');
-                    else change((currentIndex - 1 + imageSrcs.length) % imageSrcs.length, 'prev');
-                }
-            }, { passive: true });
-        })();
-    </script>
+    <script src="js/site.js" defer></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5ee825d37378440a88eb9ae3743e1fb7"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

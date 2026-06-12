@@ -3,8 +3,7 @@
    Multi-game studio site
    ======================================== */
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Special+Elite&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap');
+/* Google Fonts are loaded via <link> tags in each page head (faster than @import) */
 
 /* ========================================
    CSS Variables — Studio Base
@@ -1473,7 +1472,7 @@ p {
 
 .de-hero-tagline {
     font-size: 1.25rem;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: var(--font-body);
     font-weight: 500;
     color: var(--text-primary);
     margin-bottom: var(--space-md);
@@ -1675,7 +1674,7 @@ p {
     color: white;
     margin-bottom: var(--space-xs);
     letter-spacing: 0.02em;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: var(--font-body);
 }
 
 .discord-description {
@@ -2140,18 +2139,6 @@ p {
     animation: fadeUp 0.7s ease forwards 0.35s;
 }
 
-.dz-hero-working-title {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: var(--text-tertiary);
-    letter-spacing: 0.08em;
-    margin-top: -0.25rem;
-    margin-bottom: var(--space-md);
-    opacity: 0;
-    animation: fadeUp 0.6s ease forwards 0.42s;
-}
-
 .dz-hero-tagline {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1.125rem;
@@ -2239,6 +2226,11 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
+}
+
+/* With an odd number of items, stretch the last one across both columns */
+.dz-gallery-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
 }
 
 .dz-gallery-item {
@@ -2442,4 +2434,67 @@ p {
     color: var(--text-secondary);
     margin-bottom: var(--space-xl);
     position: relative;
+}
+
+/* ========================================
+   No-JS fallback & reduced motion
+   Reveal-animated elements start at opacity 0 and rely on js/site.js
+   adding .revealed. Without JS (html lacks .js) they must stay visible.
+   ======================================== */
+html:not(.js) .section-header,
+html:not(.js) .card,
+html:not(.js) .faq-item,
+html:not(.js) .contact-card,
+html:not(.js) .game-panel,
+html:not(.js) .community-card,
+html:not(.js) .dz-pitch-text,
+html:not(.js) .dz-gallery-item,
+html:not(.js) .dz-phase-card {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+    }
+
+    .section-header,
+    .card,
+    .faq-item,
+    .contact-card,
+    .game-panel,
+    .community-card,
+    .dz-pitch-text,
+    .dz-gallery-item,
+    .dz-phase-card {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ========================================
+   Placeholder block (press kit, 404)
+   ======================================== */
+.placeholder-block {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-lg);
+    border: 1px dashed var(--border-light);
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary);
+}
+
+.placeholder-block h2 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.placeholder-block .btn {
+    margin-top: var(--space-lg);
 }

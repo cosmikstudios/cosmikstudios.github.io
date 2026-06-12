@@ -1,0 +1,37 @@
+# Cosmik Studios
+
+> Independent game studio by Mário Cosme, a solo developer making games part-time alongside a full-time job. Two games: Darkest Exiles (iOS, released) and Donor Zero (PC, in development). Website: https://www.cosmikstudios.dev
+
+## Games
+
+### Darkest Exiles (released, iOS)
+- Tagline: "You don't fight. You prepare them to."
+- A hardcore tactical RPG management simulation. You play a Guild Master: scout unproven youth, train heroes through an academy system, and watch them fight in deterministic auto-battler combat (60 ticks per second, 2x4 grid formations, six damage types, eight hero classes). Heroes age from Adept through Prime to Decline and Retirement. Recurring Cycles with global rule modifiers (Edicts) force strategy changes.
+- Free to download on the App Store: https://apps.apple.com/us/app/darkest-exiles/id6758465585
+- Page: https://www.cosmikstudios.dev/darkest-exiles.html
+
+### Donor Zero (in development, PC)
+- Tagline: "Steal. Extract. Sell. Disappear."
+- A body-horror management sim set in Dayton, Ohio, 1993. Bid on stolen alien corpses, perform hands-on organ extraction, sell to shady factions, and avoid government agents. Daily loop: Procurement (morning), Extraction (afternoon), Sale (evening), Upkeep (night). You have 30 days to make $1.5 million and vanish.
+- Built in Godot. Coming to Steam, wishlist: https://store.steampowered.com/app/4580200/Donor_Zero/
+- Page: https://www.cosmikstudios.dev/donor-zero.html
+
+## Pages
+
+- [Home](https://www.cosmikstudios.dev/): Studio overview and game showcase
+- [Darkest Exiles](https://www.cosmikstudios.dev/darkest-exiles.html): Game page with screenshots and features
+- [Donor Zero](https://www.cosmikstudios.dev/donor-zero.html): Game page with gallery and gameplay loop
+- [Support](https://www.cosmikstudios.dev/support.html): Contact, bug reporting, and FAQ for Darkest Exiles
+- [Press Kit](https://www.cosmikstudios.dev/press.html): Press assets (under construction)
+- [Privacy Policy](https://www.cosmikstudios.dev/privacy-policy.html)
+- [Terms of Service](https://www.cosmikstudios.dev/terms-of-service.html)
+
+## Contact and social
+
+- Email: contact@cosmikstudios.dev
+- Discord: https://discord.gg/4AS2ZUM2hf
+- X (studio): https://x.com/CosmikStudios
+- X (Donor Zero): https://x.com/DonorZero
+- Mastodon (Donor Zero): https://mastodon.gamedev.place/@donorzero
+- Bluesky (Donor Zero): https://bsky.app/profile/donorzero.bsky.social
+- itch.io: https://cosmikstudios.itch.io
