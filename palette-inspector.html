@@ -236,7 +236,11 @@
     line-height: 1.5;
     opacity: .8;
   }
-  .dup-tag.shared { color: #e0b15a; border-color: #e0b15a; }
+  .dup-tag.shared { color: #e0b15a; border-color: #e0b15a; cursor: pointer; }
+  .dup-tag.shared:hover { opacity: 1; }
+  .dup-tag.shared.active { background: #e0b15a; color: #1a1408; opacity: 1; }
+  .row.shared-hit { background: rgba(224,177,90,.16); box-shadow: inset 3px 0 0 #e0b15a; }
+  .row.shared-hit:hover { background: rgba(224,177,90,.22); }
   .row-hex { font: 12px/1.4 var(--mono); color: var(--muted); }
   .row-rgb { font: 11px/1.4 var(--mono); color: var(--muted); flex: none; }
 
@@ -317,6 +321,7 @@
   var palettes = [];
   var query = "";
   var layout = "strip"; // "strip" | "grid"
+  var activeSharedHex = null;
   var STORE_FILES = "palette-inspector:files";
   var STORE_LAYOUT = "palette-inspector:layout";
 
@@ -377,6 +382,30 @@
     colors.forEach(function (c) { seen[c.hex] = (seen[c.hex] || 0) + 1; });
     colors.forEach(function (c) { c.dup = seen[c.hex] > 1; });
     return { name: name, file: filename, columns: columns, comments: comments, colors: colors };
+  }
+
+  function clearShared() {
+    activeSharedHex = null;
+    Array.prototype.forEach.call(grid.querySelectorAll(".row.shared-hit"), function (r) {
+      r.classList.remove("shared-hit");
+    });
+    Array.prototype.forEach.call(grid.querySelectorAll(".dup-tag.shared.active"), function (t) {
+      t.classList.remove("active");
+    });
+  }
+  function setShared(hex) {
+    clearShared();
+    activeSharedHex = hex;
+    Array.prototype.forEach.call(grid.querySelectorAll(".row"), function (r) {
+      if (r._hex === hex) r.classList.add("shared-hit");
+    });
+    Array.prototype.forEach.call(grid.querySelectorAll(".dup-tag.shared"), function (t) {
+      if (t.dataset.hex === hex) t.classList.add("active");
+    });
+  }
+  function toggleShared(hex) {
+    if (activeSharedHex === hex) clearShared();
+    else setShared(hex);
   }
 
   function el(tag, cls, txt) {
@@ -484,6 +513,7 @@
     p.colors.forEach(function (c) {
       var row = el("div", "row");
       row._search = ((c.name || "") + " " + c.hex).toLowerCase();
+      row._hex = c.hex;
       var chip = el("div", "chip checker");
       var inner = el("div");
       inner.style.cssText = "width:100%;height:100%;border-radius:6px;background:" + c.hex;
@@ -496,7 +526,12 @@
       if (c.dup) nameRow.appendChild(el("span", "dup-tag", "dup"));
       if (c.sharedFiles && c.sharedFiles.length) {
         var st = el("span", "dup-tag shared", "shared ×" + (c.sharedFiles.length + 1));
-        st.title = "Also in: " + c.sharedFiles.join(", ");
+        st.title = "Also in: " + c.sharedFiles.join(", ") + " — click to highlight matches";
+        st.dataset.hex = c.hex;
+        st.addEventListener("click", function (e) {
+          e.stopPropagation();
+          toggleShared(c.hex);
+        });
         nameRow.appendChild(st);
       }
       if (c.name || c.dup || (c.sharedFiles && c.sharedFiles.length)) info.appendChild(nameRow);
@@ -578,6 +613,7 @@
       });
     });
 
+    activeSharedHex = null;
     grid.innerHTML = "";
     palettes.forEach(function (p) {
       grid.appendChild(p.error ? renderError(p) : renderCard(p));
@@ -657,6 +693,13 @@
       if (p.colors) p.colors.forEach(function (c) { all.push(c.hex); });
     });
     if (all.length) copy(all.join("\n"), "Copied " + all.length + " hex values");
+  });
+
+  // Click anywhere that is not a shared tag deselects the highlight.
+  document.addEventListener("click", function (e) {
+    if (activeSharedHex && !(e.target.closest && e.target.closest(".dup-tag.shared"))) {
+      clearShared();
+    }
   });
 
   layoutBtn.addEventListener("click", function () {
