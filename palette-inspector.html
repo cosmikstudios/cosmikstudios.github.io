@@ -15,6 +15,7 @@
     --muted: #9aa1ad;
     --accent: #6fb3ff;
     --radius: 10px;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; }
@@ -24,24 +25,43 @@
     font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+  code {
+    font-family: var(--mono);
+    font-size: .92em;
+    background: var(--panel-2);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
   header {
-    padding: 22px 24px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 18px 24px 16px;
     border-bottom: 1px solid var(--line);
   }
+  .head-text { flex: 1; min-width: 0; }
   h1 { margin: 0 0 4px; font-size: 20px; letter-spacing: .2px; }
-  .sub { color: var(--muted); font-size: 13px; }
-  main { padding: 24px; max-width: 1400px; margin: 0 auto; }
+  .sub { color: var(--muted); font-size: 13px; max-width: 760px; }
 
-  /* Drop zone */
+  /* Compact drop control, top-right */
+  .head-tools {
+    flex: none;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
   .drop {
     border: 2px dashed var(--line);
     border-radius: var(--radius);
-    padding: 34px 20px;
+    padding: 12px 14px;
     text-align: center;
     color: var(--muted);
     cursor: pointer;
     transition: border-color .15s, background .15s, color .15s;
-    margin-bottom: 22px;
+    font-size: 12.5px;
+    line-height: 1.4;
   }
   .drop:hover, .drop.over {
     border-color: var(--accent);
@@ -50,52 +70,94 @@
   }
   .drop strong { color: var(--text); }
   .drop input { display: none; }
+  .tool-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .search {
+    flex: 1;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 13px;
+    padding: 7px 10px;
+    outline: none;
+  }
+  .search:focus { border-color: var(--accent); }
+  .search::placeholder { color: var(--muted); }
 
-  .toolbar {
+  main { padding: 22px 24px 60px; max-width: 1500px; margin: 0 auto; }
+  .statusbar {
     display: flex;
     gap: 12px;
     align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 16px;
+    min-height: 18px;
   }
-  .toolbar.empty { display: none; }
+  .statusbar.empty { display: none; }
   button.btn {
     background: var(--panel-2);
     color: var(--text);
     border: 1px solid var(--line);
     border-radius: 8px;
-    padding: 7px 13px;
-    font-size: 13px;
+    padding: 7px 12px;
+    font-size: 12.5px;
     cursor: pointer;
+    white-space: nowrap;
   }
   button.btn:hover { border-color: var(--accent); }
-  .count { color: var(--muted); font-size: 13px; margin-left: auto; }
+  button.btn.mini { padding: 4px 9px; font-size: 11.5px; }
 
-  /* Palette grid */
+  .empty-hint {
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+    padding: 60px 20px;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+  }
+  .empty-hint.hide { display: none; }
+
+  /* Masonry via CSS columns */
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 18px;
+    column-width: 360px;
+    column-gap: 18px;
   }
   .card {
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: var(--radius);
     overflow: hidden;
+    break-inside: avoid;
+    margin: 0 0 18px;
+    display: inline-block;
+    width: 100%;
+  }
+  .card.hide { display: none; }
+  .card-head { padding: 14px 16px 12px; border-bottom: 1px solid var(--line); }
+  .card-title-row {
     display: flex;
-    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    justify-content: space-between;
   }
-  .card-head {
-    padding: 14px 16px 12px;
-    border-bottom: 1px solid var(--line);
+  .card-name { font-size: 15px; font-weight: 600; margin: 0; word-break: break-word; }
+  .card-remove {
+    flex: none;
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding: 0 2px;
   }
-  .card-name {
-    font-size: 15px;
-    font-weight: 600;
-    margin: 0 0 2px;
-    word-break: break-word;
-  }
-  .card-file { font-size: 12px; color: var(--muted); word-break: break-all; }
+  .card-remove:hover { color: var(--text); }
+  .card-file { font-size: 12px; color: var(--muted); word-break: break-all; margin-top: 2px; }
   .card-meta { font-size: 12px; color: var(--muted); margin-top: 6px; }
   .card-comment {
     font-size: 12px;
@@ -105,10 +167,43 @@
     white-space: pre-wrap;
     line-height: 1.45;
   }
+  .card-actions { display: flex; gap: 6px; margin-top: 11px; flex-wrap: wrap; }
+
+  /* Checkerboard backing so dark/edge colors stay visible */
+  .checker {
+    background-image:
+      linear-gradient(45deg, #3a3f48 25%, transparent 25%),
+      linear-gradient(-45deg, #3a3f48 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #3a3f48 75%),
+      linear-gradient(-45deg, transparent 75%, #3a3f48 75%);
+    background-size: 12px 12px;
+    background-position: 0 0, 0 6px, 6px -6px, -6px 0;
+    background-color: #2a2e36;
+  }
 
   /* Ramp strip */
-  .ramp { display: flex; height: 44px; }
-  .ramp .sw { flex: 1; cursor: pointer; }
+  .ramp {
+    display: flex;
+    height: 46px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+  }
+  .ramp .sw {
+    flex: 1;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+  }
+  .ramp .sw:hover { box-shadow: inset 0 0 0 2px rgba(255,255,255,.6); }
+
+  /* Grid swatch view (honors the .gpl Columns: field) */
+  .swatch-grid { display: grid; gap: 3px; padding: 8px; }
+  .swatch-grid .gsw {
+    aspect-ratio: 1 / 1;
+    min-height: 26px;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.14);
+  }
+  .swatch-grid .gsw:hover { box-shadow: inset 0 0 0 2px rgba(255,255,255,.6); }
 
   /* Swatch rows */
   .rows { display: flex; flex-direction: column; }
@@ -121,31 +216,38 @@
     cursor: pointer;
   }
   .row:hover { background: var(--panel-2); }
+  .row.dim { display: none; }
   .chip {
     width: 30px;
     height: 30px;
     border-radius: 6px;
     flex: none;
-    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
   }
   .row-info { min-width: 0; flex: 1; }
-  .row-name { font-size: 13px; }
-  .row-hex {
-    font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
-    color: var(--muted);
+  .row-name { font-size: 13px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .dup-tag {
+    font-size: 10px;
+    font-family: var(--mono);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 0 4px;
+    line-height: 1.5;
+    opacity: .8;
   }
-  .row-rgb {
-    font: 11px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
-    color: var(--muted);
-    flex: none;
-  }
+  .dup-tag.shared { color: #e0b15a; border-color: #e0b15a; }
+  .row-hex { font: 12px/1.4 var(--mono); color: var(--muted); }
+  .row-rgb { font: 11px/1.4 var(--mono); color: var(--muted); flex: none; }
+
   .err {
     background: #3a1f22;
-    border-color: #5b2b30;
+    border: 1px solid #5b2b30;
     color: #ffd9dc;
-    padding: 12px 16px;
+    padding: 12px;
     border-radius: 8px;
     font-size: 13px;
+    margin: 12px;
   }
   .toast {
     position: fixed;
@@ -163,25 +265,38 @@
     transition: opacity .2s;
   }
   .toast.show { opacity: 1; }
+
+  @media (max-width: 720px) {
+    header { flex-direction: column; gap: 14px; }
+    .head-tools { width: 100%; }
+  }
 </style>
 </head>
 <body>
 <header>
-  <h1>Palette Inspector</h1>
-  <div class="sub">Drop GIMP <code>.gpl</code> palette files to inspect colors, names, and metadata. Everything runs locally in your browser. Click any swatch to copy its hex.</div>
+  <div class="head-text">
+    <h1>Palette Inspector</h1>
+    <div class="sub">Drop GIMP <code>.gpl</code> palette files to inspect colors, names, and metadata. Everything runs locally in your browser. Click any swatch to copy its hex.</div>
+  </div>
+  <div class="head-tools">
+    <label class="drop" id="drop">
+      <strong>Drop .gpl files here</strong> or click to browse.
+      <input type="file" id="file" accept=".gpl,text/plain" multiple>
+    </label>
+    <div class="tool-row">
+      <input type="search" class="search" id="search" placeholder="Filter by name or hex…">
+      <button class="btn mini" id="clear">Clear</button>
+    </div>
+  </div>
 </header>
 
 <main>
-  <label class="drop" id="drop">
-    <strong>Drop .gpl files here</strong> or click to browse. Multiple at once is fine.
-    <input type="file" id="file" accept=".gpl,text/plain" multiple>
-  </label>
-
-  <div class="toolbar empty" id="toolbar">
-    <button class="btn" id="clear">Clear all</button>
-    <span class="count" id="count"></span>
+  <div class="statusbar empty" id="statusbar">
+    <span id="count"></span>
+    <button class="btn mini" id="copy-all-hex">Copy all hex</button>
+    <button class="btn mini" id="layout-toggle">Layout: Strip</button>
   </div>
-
+  <div class="empty-hint" id="empty-hint">No palettes loaded. Drop <code>.gpl</code> files using the box in the top-right corner.</div>
   <div class="grid" id="grid"></div>
 </main>
 
@@ -194,19 +309,46 @@
   var grid = document.getElementById("grid");
   var fileInput = document.getElementById("file");
   var drop = document.getElementById("drop");
-  var toolbar = document.getElementById("toolbar");
+  var statusbar = document.getElementById("statusbar");
   var countEl = document.getElementById("count");
+  var searchEl = document.getElementById("search");
+  var emptyHint = document.getElementById("empty-hint");
+  var layoutBtn = document.getElementById("layout-toggle");
   var palettes = [];
+  var query = "";
+  var layout = "strip"; // "strip" | "grid"
+  var STORE_FILES = "palette-inspector:files";
+  var STORE_LAYOUT = "palette-inspector:layout";
+
+  function save() {
+    try {
+      var raw = palettes.map(function (p) { return { file: p.file, text: p._text }; })
+        .filter(function (x) { return x.text != null; });
+      localStorage.setItem(STORE_FILES, JSON.stringify(raw));
+      localStorage.setItem(STORE_LAYOUT, layout);
+    } catch (e) {}
+  }
+  function load() {
+    try {
+      layout = localStorage.getItem(STORE_LAYOUT) || "strip";
+      var raw = JSON.parse(localStorage.getItem(STORE_FILES) || "[]");
+      raw.forEach(function (x) {
+        try {
+          var p = parseGpl(x.text, x.file);
+          p._text = x.text;
+          palettes.push(p);
+        } catch (err) {
+          palettes.push({ file: x.file, error: err.message, _text: x.text });
+        }
+      });
+    } catch (e) {}
+  }
 
   function toHex(r, g, b) {
     function h(n) { return ("0" + n.toString(16)).slice(-2); }
     return "#" + h(r) + h(g) + h(b);
   }
-  function luminance(r, g, b) {
-    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  }
 
-  // Parse a GIMP .gpl file.
   function parseGpl(text, filename) {
     var lines = text.split(/\r?\n/);
     if (!/^GIMP Palette/i.test(lines[0] || "")) {
@@ -223,14 +365,17 @@
       if ((m = line.match(/^Name:\s*(.*)$/i))) { name = m[1].trim(); continue; }
       if ((m = line.match(/^Columns:\s*(\d+)/i))) { columns = parseInt(m[1], 10); continue; }
       if (line.charAt(0) === "#") { comments.push(line.replace(/^#\s?/, "")); continue; }
-      // Color row: R G B  optional name
       m = line.match(/^\s*(\d{1,3})\s+(\d{1,3})\s+(\d{1,3})\s*(.*)$/);
       if (m) {
         var r = +m[1], g = +m[2], b = +m[3];
         if (r > 255 || g > 255 || b > 255) continue;
-        colors.push({ r: r, g: g, b: b, name: (m[4] || "").trim() });
+        colors.push({ r: r, g: g, b: b, name: (m[4] || "").trim(), hex: toHex(r, g, b) });
       }
     }
+    // Flag duplicate hex values within the palette.
+    var seen = {};
+    colors.forEach(function (c) { seen[c.hex] = (seen[c.hex] || 0) + 1; });
+    colors.forEach(function (c) { c.dup = seen[c.hex] > 1; });
     return { name: name, file: filename, columns: columns, comments: comments, colors: colors };
   }
 
@@ -247,60 +392,126 @@
     toast.textContent = msg;
     toast.classList.add("show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 1100);
+    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 1200);
   }
-  function copy(text) {
+  function copy(text, label) {
+    function done() { showToast(label || ("Copied " + text)); }
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(function () { showToast("Copied " + text); });
+      navigator.clipboard.writeText(text).then(done, function () {});
     } else {
       var ta = document.createElement("textarea");
       ta.value = text; document.body.appendChild(ta); ta.select();
-      try { document.execCommand("copy"); showToast("Copied " + text); } catch (e) {}
+      try { document.execCommand("copy"); done(); } catch (e) {}
       document.body.removeChild(ta);
     }
   }
 
+  // Sanitize a color name into a CSS-var-safe token.
+  function cssVarName(c, i) {
+    var base = (c.name || ("color-" + (i + 1)))
+      .toLowerCase()
+      .replace(/#[0-9a-f]{3,6}/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+    return base || ("color-" + (i + 1));
+  }
+
   function renderCard(p) {
     var card = el("div", "card");
+    card._palette = p;
 
     var head = el("div", "card-head");
-    head.appendChild(el("div", "card-name", p.name));
+    var titleRow = el("div", "card-title-row");
+    titleRow.appendChild(el("div", "card-name", p.name));
+    var rm = el("button", "card-remove", "×");
+    rm.title = "Remove this palette";
+    rm.addEventListener("click", function () {
+      var idx = palettes.indexOf(p);
+      if (idx !== -1) { palettes.splice(idx, 1); render(); }
+    });
+    titleRow.appendChild(rm);
+    head.appendChild(titleRow);
     head.appendChild(el("div", "card-file", p.file));
-    var meta = el("div", "card-meta",
+    head.appendChild(el("div", "card-meta",
       p.colors.length + " color" + (p.colors.length === 1 ? "" : "s") +
-      (p.columns ? "  ·  " + p.columns + " columns" : ""));
-    head.appendChild(meta);
+      (p.columns ? "  ·  " + p.columns + " columns" : "")));
     if (p.comments.length) {
       head.appendChild(el("div", "card-comment", p.comments.join("\n")));
     }
+
+    var actions = el("div", "card-actions");
+    var bHex = el("button", "btn mini", "Copy hex list");
+    bHex.addEventListener("click", function () {
+      copy(p.colors.map(function (c) { return c.hex; }).join("\n"), "Copied " + p.colors.length + " hex values");
+    });
+    var bCss = el("button", "btn mini", "Copy CSS vars");
+    bCss.addEventListener("click", function () {
+      var css = ":root {\n" + p.colors.map(function (c, i) {
+        return "  --" + cssVarName(c, i) + ": " + c.hex + ";";
+      }).join("\n") + "\n}";
+      copy(css, "Copied CSS variables");
+    });
+    actions.appendChild(bHex);
+    actions.appendChild(bCss);
+    head.appendChild(actions);
     card.appendChild(head);
 
-    // Ramp strip
-    var ramp = el("div", "ramp");
-    p.colors.forEach(function (c) {
-      var hex = toHex(c.r, c.g, c.b);
-      var sw = el("div", "sw");
-      sw.style.background = hex;
-      sw.title = hex + (c.name ? "  " + c.name : "");
-      sw.addEventListener("click", function () { copy(hex); });
-      ramp.appendChild(sw);
-    });
-    card.appendChild(ramp);
+    // Swatch view: strip (gradient ramp) or grid (honors the .gpl Columns: field).
+    if (layout === "grid" && p.columns) {
+      var gridView = el("div", "swatch-grid checker");
+      gridView.style.gridTemplateColumns = "repeat(" + p.columns + ", 1fr)";
+      p.colors.forEach(function (c) {
+        var gsw = el("div", "gsw");
+        gsw.style.background = c.hex;
+        gsw.title = c.hex + (c.name ? "  " + c.name : "");
+        gsw.addEventListener("click", function () { copy(c.hex); });
+        gridView.appendChild(gsw);
+      });
+      card.appendChild(gridView);
+    } else {
+      var ramp = el("div", "ramp checker");
+      p.colors.forEach(function (c) {
+        var sw = el("div", "sw");
+        sw.style.background = c.hex;
+        sw.title = c.hex + (c.name ? "  " + c.name : "");
+        sw.addEventListener("click", function () { copy(c.hex); });
+        ramp.appendChild(sw);
+      });
+      card.appendChild(ramp);
+    }
 
-    // Rows
     var rows = el("div", "rows");
     p.colors.forEach(function (c) {
-      var hex = toHex(c.r, c.g, c.b);
       var row = el("div", "row");
-      var chip = el("div", "chip");
-      chip.style.background = hex;
+      row._search = ((c.name || "") + " " + c.hex).toLowerCase();
+      var chip = el("div", "chip checker");
+      var inner = el("div");
+      inner.style.cssText = "width:100%;height:100%;border-radius:6px;background:" + c.hex;
+      chip.appendChild(inner);
       row.appendChild(chip);
+
       var info = el("div", "row-info");
-      if (c.name) info.appendChild(el("div", "row-name", c.name));
-      info.appendChild(el("div", "row-hex", hex));
+      var nameRow = el("div", "row-name");
+      if (c.name) nameRow.appendChild(el("span", null, c.name));
+      if (c.dup) nameRow.appendChild(el("span", "dup-tag", "dup"));
+      if (c.sharedFiles && c.sharedFiles.length) {
+        var st = el("span", "dup-tag shared", "shared ×" + (c.sharedFiles.length + 1));
+        st.title = "Also in: " + c.sharedFiles.join(", ");
+        nameRow.appendChild(st);
+      }
+      if (c.name || c.dup || (c.sharedFiles && c.sharedFiles.length)) info.appendChild(nameRow);
+      info.appendChild(el("div", "row-hex", c.hex));
       row.appendChild(info);
-      row.appendChild(el("div", "row-rgb", c.r + ", " + c.g + ", " + c.b));
-      row.addEventListener("click", function () { copy(hex); });
+
+      var rgb = el("div", "row-rgb", c.r + ", " + c.g + ", " + c.b);
+      row.appendChild(rgb);
+
+      // Click hex/name area copies hex; click RGB copies rgb().
+      row.addEventListener("click", function () { copy(c.hex); });
+      rgb.addEventListener("click", function (e) {
+        e.stopPropagation();
+        copy("rgb(" + c.r + ", " + c.g + ", " + c.b + ")");
+      });
       rows.appendChild(row);
     });
     card.appendChild(rows);
@@ -308,25 +519,79 @@
     return card;
   }
 
-  function renderError(filename, msg) {
+  function renderError(p) {
     var card = el("div", "card");
+    card._palette = p;
     var head = el("div", "card-head");
-    head.appendChild(el("div", "card-name", filename));
+    var titleRow = el("div", "card-title-row");
+    titleRow.appendChild(el("div", "card-name", p.file));
+    var rm = el("button", "card-remove", "×");
+    rm.title = "Remove";
+    rm.addEventListener("click", function () {
+      var idx = palettes.indexOf(p);
+      if (idx !== -1) { palettes.splice(idx, 1); render(); }
+    });
+    titleRow.appendChild(rm);
+    head.appendChild(titleRow);
     card.appendChild(head);
-    var e = el("div", "err", "Could not parse: " + msg);
-    e.style.margin = "12px";
-    card.appendChild(e);
+    card.appendChild(el("div", "err", "Could not parse: " + p.error));
     return card;
   }
 
+  function applyFilter() {
+    var q = query.trim().toLowerCase();
+    Array.prototype.forEach.call(grid.children, function (card) {
+      var p = card._palette;
+      if (!q) {
+        card.classList.remove("hide");
+        Array.prototype.forEach.call(card.querySelectorAll(".row"), function (r) { r.classList.remove("dim"); });
+        return;
+      }
+      var cardHit = (p.name + " " + p.file).toLowerCase().indexOf(q) !== -1;
+      var anyRow = false;
+      Array.prototype.forEach.call(card.querySelectorAll(".row"), function (r) {
+        var hit = cardHit || r._search.indexOf(q) !== -1;
+        r.classList.toggle("dim", !hit);
+        if (hit) anyRow = true;
+      });
+      card.classList.toggle("hide", !cardHit && !anyRow);
+    });
+  }
+
   function render() {
+    // Cross-palette shared-color detection: which distinct files hold each hex.
+    var hexFiles = {};
+    palettes.forEach(function (p) {
+      if (!p.colors) return;
+      var here = {};
+      p.colors.forEach(function (c) {
+        if (here[c.hex]) return;
+        here[c.hex] = true;
+        (hexFiles[c.hex] = hexFiles[c.hex] || []).push(p.file);
+      });
+    });
+    palettes.forEach(function (p) {
+      if (!p.colors) return;
+      p.colors.forEach(function (c) {
+        var others = (hexFiles[c.hex] || []).filter(function (f) { return f !== p.file; });
+        c.sharedFiles = others;
+      });
+    });
+
     grid.innerHTML = "";
     palettes.forEach(function (p) {
-      grid.appendChild(p.error ? renderError(p.file, p.error) : renderCard(p));
+      grid.appendChild(p.error ? renderError(p) : renderCard(p));
     });
     var ok = palettes.filter(function (p) { return !p.error; }).length;
-    countEl.textContent = ok + " palette" + (ok === 1 ? "" : "s") + " loaded";
-    toolbar.classList.toggle("empty", palettes.length === 0);
+    var totalColors = palettes.reduce(function (n, p) {
+      return n + (p.colors ? p.colors.length : 0);
+    }, 0);
+    countEl.textContent = ok + " palette" + (ok === 1 ? "" : "s") + " · " + totalColors + " colors";
+    statusbar.classList.toggle("empty", palettes.length === 0);
+    emptyHint.classList.toggle("hide", palettes.length !== 0);
+    layoutBtn.textContent = "Layout: " + (layout === "grid" ? "Grid" : "Strip");
+    applyFilter();
+    save();
   }
 
   function addFiles(fileList) {
@@ -335,9 +600,11 @@
       var reader = new FileReader();
       reader.onload = function () {
         try {
-          palettes.push(parseGpl(reader.result, f.name));
+          var p = parseGpl(reader.result, f.name);
+          p._text = reader.result;
+          palettes.push(p);
         } catch (err) {
-          palettes.push({ file: f.name, error: err.message });
+          palettes.push({ file: f.name, error: err.message, _text: reader.result });
         }
         render();
       };
@@ -348,6 +615,11 @@
   fileInput.addEventListener("change", function () {
     addFiles(fileInput.files);
     fileInput.value = "";
+  });
+
+  searchEl.addEventListener("input", function () {
+    query = searchEl.value;
+    applyFilter();
   });
 
   ["dragenter", "dragover"].forEach(function (ev) {
@@ -365,7 +637,6 @@
   drop.addEventListener("drop", function (e) {
     if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
   });
-  // Allow dropping anywhere on the page too.
   window.addEventListener("dragover", function (e) { e.preventDefault(); });
   window.addEventListener("drop", function (e) {
     e.preventDefault();
@@ -375,8 +646,26 @@
 
   document.getElementById("clear").addEventListener("click", function () {
     palettes = [];
+    searchEl.value = "";
+    query = "";
     render();
   });
+
+  document.getElementById("copy-all-hex").addEventListener("click", function () {
+    var all = [];
+    palettes.forEach(function (p) {
+      if (p.colors) p.colors.forEach(function (c) { all.push(c.hex); });
+    });
+    if (all.length) copy(all.join("\n"), "Copied " + all.length + " hex values");
+  });
+
+  layoutBtn.addEventListener("click", function () {
+    layout = layout === "grid" ? "strip" : "grid";
+    render();
+  });
+
+  load();
+  render();
 })();
 </script>
 </body>
